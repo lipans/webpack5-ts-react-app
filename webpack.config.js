@@ -15,6 +15,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.s[ca]ss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ]
+      },
+      {
         test: /\.(ts|tsx|js)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
