@@ -4,13 +4,18 @@ const ProvidePlugin = require("webpack").ProvidePlugin;
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   devServer: {
     port: 9527,
   },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  resolve: {
+    alias: { process: 'process/browser' },
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    modules: [path.resolve(__dirname, './src'), 'node_modules'],
   },
   module: {
     rules: [
@@ -23,7 +28,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(ts|tsx|js)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
