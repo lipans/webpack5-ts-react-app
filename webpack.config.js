@@ -1,9 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProvidePlugin = require("webpack").ProvidePlugin;
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+
+const isDevelopment = process.env.NODE_ENV === "development";
 
 module.exports = {
-  mode: 'development',
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
   entry: './src/index.tsx',
   devServer: {
     port: 9527,
@@ -61,5 +64,6 @@ module.exports = {
     new ProvidePlugin({
       "React": "react",
     }),
+    isDevelopment && new ForkTsCheckerWebpackPlugin(),
   ]
 };
