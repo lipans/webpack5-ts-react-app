@@ -1,18 +1,14 @@
 {
-    "compilerOptions": {
-        "baseUrl": "./src",
-        "sourceMap": true,
-        "target": "es5",
-        "esModuleInterop": true,
-        "moduleResolution": "node",
-        "jsx": "react-jsx",
-        "paths": {
-            "src/*": [
-                "src/*"
-            ]
-        }
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "sourceMap": true,
+    "target": "es5",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "paths": {
+      "src/*": ["src/*"],
     },
-    "include": [
-        "src"
-    ]
+  },
+  "include": ["src"],
 }
