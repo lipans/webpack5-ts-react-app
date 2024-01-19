@@ -4,7 +4,7 @@ import SvgLogo from "./logo.svg";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" data-testid="app">
       <span>webpack5 ts react app</span>
       <div>
         <img src={logo} alt="logo" className="logo" />
