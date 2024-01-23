@@ -7,7 +7,8 @@
     "start": "NODE_ENV=development webpack serve",
     "lint": "eslint src --fix",
     "prettier": "prettier --write {src/**/*.{ts,tsx,scss},./*.{js,json}}",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -31,9 +32,11 @@
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^8.0.0",
     "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.6.4",
     "jest-environment-jsdom": "^29.6.4",
+    "lint-staged": "^15.2.0",
     "prettier": "^3.0.3",
     "react-svg-loader": "^3.0.3",
     "sass": "^1.66.1",
@@ -47,5 +50,16 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{scss,json}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
